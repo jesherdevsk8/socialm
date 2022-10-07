@@ -32,4 +32,4 @@ jobs:
         name: Push Docker Hub
         run: |
           docker tag socialm jesherpinkman/socialm:latest
-          docker push jesherpinkman/flaskapi:latest
+          docker push jesherpinkman/socialm:latest

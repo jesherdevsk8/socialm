@@ -29,7 +29,7 @@ jobs:
           load: true
           tags: socialm:latest
       -
-        name: Inspect
+        name: Push Docker Hub
         run: |
-          docker image inspect socialm:latest
-          
+          docker tag socialm jesherpinkman/socialm:latest
+          docker push jesherpinkman/flaskapi:latest

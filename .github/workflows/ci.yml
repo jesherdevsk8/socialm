@@ -19,6 +19,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: socialm-jesher/.
+          run: docker build . --file Dockerfile --tag jesherpinkman/socialm
+          context: .
           push: true
           tags: jesherpinkman/socialm:latest

@@ -16,10 +16,20 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       -
-        name: Build and push
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build
         uses: docker/build-push-action@v3
         with:
-          run: docker build . --file Dockerfile --tag jesherpinkman/socialm
           context: .
-          push: true
-          tags: jesherpinkman/socialm:latest
+          load: true
+          tags: socialm:latest
+      -
+        name: Inspect
+        run: |
+          docker image inspect socialm:latest
+          

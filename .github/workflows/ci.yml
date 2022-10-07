@@ -16,5 +16,5 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: jesherpinkman/socialm
-          dockerfile: socialm-jesher/Dockerfile
+          dockerfile: Dockerfile
           tags: latest
